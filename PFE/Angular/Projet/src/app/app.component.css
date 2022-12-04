@@ -1,0 +1,32 @@
+app-footer{
+border-top: solid 1px;
+  background: rgba(150, 150, 150, 0.5);
+  width: 100%;
+  min-width: 100vh;
+  height: 40px;
+  padding-top: 10px;
+  text-align: center;
+
+}
+.footer{
+  min-width: 100%;
+}
+#id{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    min-width: 100%;
+    width: 100%;
+}
+body{
+  display:flex;
+
+  flex-direction:column;
+
+  min-height:100vh;
+}
+.wrapper{
+
+  flex:1;
+}

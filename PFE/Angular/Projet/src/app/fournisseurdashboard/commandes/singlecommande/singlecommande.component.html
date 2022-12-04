@@ -1,0 +1,35 @@
+<div class="container-fluid w-50 shadow p-3 mb-5 bg-white rounded">
+    <div class="row">
+        <div class="col-lg-6">
+          <h3 class="mb-3">Détails de la commande</h3>
+          <div class="mb-3">
+            <label class="titre">Id Commande :</label>
+            <label for="">{{commande.id}}</label>
+          </div>
+          <div class="mb-3">
+            <label class="titre">Prix Total(Dt) :</label>
+            <label for="">{{commande.prixtotal}}</label>
+          </div>
+          <div class="mb-3">
+            <label class="titre">Date :</label>
+            <label for="">{{commande.date}}</label>
+          </div>
+        </div>
+        <div class="col-lg-6" id="hide">
+            <h4 id="title" class="mb-3">Affecter un livreur</h4>
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom Livreur</label>
+                <input type="text" class="form-control" id="nom" name="nom">
+            </div>
+            <div class="mb-3">
+                <label for="nom" class="form-label">Prenom Livreur</label>
+                <input type="text" class="form-control" id="nom" name="nom">
+            </div>
+            <div class="mb-3">
+                <label for="tel" class="form-label">Tel</label>
+                <input type="text" class="form-control" id="tel" name="tel">
+            </div>
+        </div>
+        <button class="btn" id="hide2" (click)="confirm()">Affecter</button>
+    </div>
+</div>

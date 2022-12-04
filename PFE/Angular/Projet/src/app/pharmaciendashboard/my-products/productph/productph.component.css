@@ -1,0 +1,11 @@
+label{
+    font-weight: bold;
+}
+img{
+    min-width:300px;
+    min-height: 300px;
+}
+#mettre{
+    background-color: #22a81f;
+    margin-right: 6px;
+}

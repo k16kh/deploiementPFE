@@ -1,0 +1,1 @@
+scaffold-dbcontext "server=.\sqlexpress; database=Nombasededonnées; integrated security=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models

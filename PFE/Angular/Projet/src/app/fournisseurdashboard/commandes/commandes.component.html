@@ -1,0 +1,28 @@
+<div class="container my-5">
+    <h4 id="cl" class="mb-3">Liste des commandes :</h4>
+    <table class="table  table-bordered">
+    <thead>
+    <tr>
+    <th>N°</th>
+    <th>Date</th>
+    <th>Prix Dt</th>
+    <th>Etat</th>
+    <th>Consulter</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of commandes;let i=index;">
+       <ng-container>
+        <td id="num">{{i}}</td>
+        <td>{{item.date | slice:0:10 }}</td>
+        <td>{{item.prixtotal}}</td>
+    <td [ngClass]="{'red':(item.etat=='Non Confirmée'), 'green': item.etat=='Confirmée'}">{{item.etat}}</td>
+        <td><a [routerLink]="['/fournisseur/commandesclient','commande',item.id]">Consulter</a></td>
+    </ng-container>
+     </tr>
+    </tbody>
+    </table>
+    <div>
+</div>
+    </div>
+    

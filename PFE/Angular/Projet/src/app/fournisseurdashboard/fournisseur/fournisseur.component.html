@@ -1,0 +1,38 @@
+<div class="container my-5">
+    <h4 id="cl" class="mb-3">Bienvenue {{name}}</h4>
+   <input id="add" type="button" class="btn btn-success" id="add" value="Ajouter un produit" routerLink="AddProduct">
+ <a routerLink="commandesclient"><input type="button" class="btn" id="commande" value="Commandes"></a> 
+    <table class="table  table-bordered">
+    <thead>
+    <tr>
+    <th>N°</th>
+    <th>Nom</th>
+    <th>Prix </th>
+    <th>TVA %</th>
+    <th>Qte</th>
+    <th>Date Péremption</th>
+    <th>Catégorie</th>
+    <th>Image</th>
+    <th>Détails</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of Products;let i=index;">
+       <ng-container>
+        <td id="num">{{i}}</td>
+        <td>{{item.nom}}</td>
+        <td>{{item.prix}}</td>
+        <td>{{item.tva}}</td>
+        <td>{{item.qte}}</td>
+        <td>{{item.date}}</td>
+        <td name="cat">{{item.categorie}}</td>
+        <td><img src="{{item.imageString}}" alt="" id="img"></td>
+        <td><a [routerLink]="['/fournisseur','EditProduct',item.id]">Consulter</a></td>
+    </ng-container>
+     </tr>
+    </tbody>
+    </table>
+    <div>
+</div>
+    </div>
+    

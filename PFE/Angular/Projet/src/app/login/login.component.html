@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms" (submit)="submit()">
+            <div class="form login">
+                <span class="title">Se Connecter</span>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" name="Email" [(ngModel)]="service.loginuserAuth.Email" placeholder="Entrer votre mail" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password"  name="password" [(ngModel)]="service.loginuserAuth.Password" placeholder="Entrer votre mot de passe" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                        
+                        <a href="#" class="text">Mot de passe oublié ?</a>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Se Connecter" (click)="change.changestyleadmin()">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Vous n'êtes pas inscrit ?
+                        <a class="text signup-link" routerLink="../register">S'inscrire</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,7 @@
+<button type="button" id="close" class="btn-close" aria-label="Close" (click)="closedialog()"></button>
+
+  <div class="mb-3">
+    <h4>Votre avis concernant le produit:</h4>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" name="text" [(ngModel)]="msg"></textarea>
+  </div>
+  <button class="btn" (click)="submit()">Envoyer</button>

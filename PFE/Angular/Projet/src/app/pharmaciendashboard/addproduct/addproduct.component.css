@@ -1,0 +1,17 @@
+#submit{
+    background-color:#22a81f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#title{
+    color:#22a81f;
+}
+div{
+    font-weight: bold;
+}
+#image{
+    max-width: 300px;
+    max-height: 240px;
+    min-width: 300px;
+    min-height: 240px;
+}

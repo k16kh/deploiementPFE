@@ -1,0 +1,24 @@
+#con1{
+    font-size: 20px;
+}
+div{
+    text-align: left;
+}
+.con2{
+    font-size: 15px;
+    font-weight: bold;
+}
+#button{
+    background-color:rgba(0, 4, 255, 0.911);
+    color:#fcfefc;
+    margin-top: 8px;
+    margin-left: 150px;
+}
+#button:hover{
+    background-color: rgba(0, 4, 255, 0.911);;
+}
+footer{
+    min-width: 100%;
+    margin-right: 0;
+    padding-right: 0;
+}

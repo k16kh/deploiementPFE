@@ -1,0 +1,39 @@
+<div class="container my-5 w-50">
+    <h1 id="title" class="mb-3">Ajouter Un Produit</h1>
+<form (submit)="submit()">
+ <div class="mb-3">
+        <label for="nom" class="form-label">Nom Produit</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="productservice.Prod_Fournissuer.nom">
+  </div>
+  <div class="mb-3">
+    <label for="nom" class="form-label">Description</label>
+    <textarea class="form-control" name="description" id="description"  rows="3" [(ngModel)]="productservice.Prod_Fournissuer.description"></textarea>
+</div>
+<div class="mb-3">
+    <label for="price" class="form-label">Prix En DT</label>
+    <input type="text" class="form-control" id="prix" name="prix" [(ngModel)]="productservice.Prod_Fournissuer.prix">
+</div>
+<div class="mb-3">
+    <label for="tva" class="form-label">Tva %</label>
+    <input type="text" class="form-control" id="tva" name="tva" [(ngModel)]="productservice.Prod_Fournissuer.tva">
+</div>
+<div class="mb-3">
+    <label for="tva" class="form-label">Quantité</label>
+    <input type="number" min="1" max="2000" class="form-control" id="qte" name="qte" [(ngModel)]="productservice.Prod_Fournissuer.qte">
+</div>
+<div class="mb-3">
+    <label for="date" class="form-label">Date de péremption</label>
+    <input type="date" class="form-control" id="date" name="date" [(ngModel)]="productservice.Prod_Fournissuer.date">
+</div>
+<div class="mb-3">
+    <label for="categorie" class="form-label">Catégorie</label>
+    <input type="text" class="form-control" id="cat" name="cat" [(ngModel)]="cat">
+</div>
+<label class="custom-file-label" for="customFileLang">Sélectionner une image</label>
+<div class="custom-file">
+    <input type="file" class="custom-file-input" id="image" name="image" (change)="loadimage($event)">
+    <img [src]="imgurl" alt="">
+  </div>
+  <button type="submit" id="submit" class="btn btn-success">Ajouter</button>
+</form>
+</div>

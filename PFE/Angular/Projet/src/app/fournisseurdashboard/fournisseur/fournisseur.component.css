@@ -1,0 +1,41 @@
+#cl{
+    color:#22a81f;
+}
+#commande{
+    color:white;
+    float: right;
+    background-color: #22a81f;
+}
+#commande:hover{
+    background-color:white;
+    color:black;
+}
+#add{
+    background-color: #22a81f;
+    margin-bottom: 12px;
+    margin-left: 5px;
+    float: right;
+}
+#add:hover{
+    background-color: white;
+    color:black;
+}
+th{
+    color:#22a81f;
+    text-align: center;
+    font-size: 19px;
+}
+#img{
+    width: 230px;
+    height: 170px;
+    max-width: 400px;
+    max-height: 400px;
+}
+td{
+    text-align: center;
+    font-size: 18px;
+    vertical-align:middle;
+}
+#num{
+    font-weight: bold;
+}

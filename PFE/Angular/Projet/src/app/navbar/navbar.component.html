@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   </head>
+   <body>
+      <nav >
+         <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+         </div>
+         <img id="image"  src="../../assets/images/comunikcrm.png" alt="">
+         <div class="nav-items" >
+            <li name="toggle-li"><a  routerLink="home">Acceuil</a></li>
+         <!--   <li name="toggle-li"><a routerLink="products">Produits</a></li> -->
+
+            <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" routerLink="products" id="navbarDropdown"  data-bs-toggle="dropdown" aria-expanded="false">
+                 Produits 
+               </a>
+               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <li><a class="dropdown-item" routerLink="beaute" name="toggle-li" >Beauté</a></li>
+                 <li><a class="dropdown-item" routerLink="sante" name="toggle-li">Santé</a></li>
+                 <li><a class="dropdown-item"  routerLink="BienEtre" name="toggle-li" >Bien être</a></li>
+               </ul>
+             </li>
+
+
+            <li name="toggle-li"><a routerLink="avis">Contactez-nous</a></li>
+            <li  name="toggle-li" id="login"><a routerLink="login">Se Connecter</a></li>
+            <li name="toggle-li" id="register" ><a routerLink="register">S'inscrire</a></li>
+            <li  name="toggle-li" id="logout" ><a  (click)="logOut()">Se Déconnecter</a></li>
+            <li name="toggle-li" id="admin" ><a  routerLink="admin">Admin</a></li>
+            <li name="toggle-li" id="pharmacien"><a  routerLink="pharmacien">Pharmacien</a></li>
+            <li name="toggle-li" id="fournisseur" ><a  routerLink="fournisseur">Fournisseur</a></li>
+
+
+
+         </div>
+         <div class="search-icon">
+            <span class="fas fa-search"></span>
+         </div>
+         <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+         </div>
+         <form action="#" class="form">
+            <input type="text" class="search-data"
+            placeholder="Rechercher"
+            aria-label="Number"
+            [formControl]="myControl"
+            matInput
+            [matAutocomplete]="auto" name="search" [(ngModel)]="search">
+     <mat-autocomplete #auto="matAutocomplete" (optionSelected)="nav($event)">
+       <mat-option *ngFor="let option of filteredOptions | async" [value]="option" >
+         {{option}}
+       </mat-option>
+     </mat-autocomplete>
+     <button type="button" class="fas fa-search" (click)="navigate()"></button>
+         </form>
+      <a class="toggle-button" (click)="toggle()">
+         <span class="bar"></span>
+         <span class="bar"></span>
+         <span class="bar"></span>
+      </a>
+      </nav>
+   </body>
+</html>

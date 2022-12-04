@@ -1,0 +1,21 @@
+#close{
+    float: right;
+}
+h3{
+    color:#22a81f;
+}
+table{
+    text-align: center;
+}
+th{
+    font-size: 22px;
+    color:#22a81f;
+}
+td{
+    font-size: 18px;
+}
+h5{
+    color:red;
+    font-size: 30px;
+    text-align: center;
+}

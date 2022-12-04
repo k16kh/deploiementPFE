@@ -1,0 +1,26 @@
+#cl{
+    color:#22a81f;
+ }
+ table tr{
+     padding:0px !important;
+  }
+  thead{
+     color: #22a81f;
+     text-align: center;
+     font-weight: bold;
+     font-size: 18px;
+  }
+  td{
+    vertical-align: middle;
+    text-align: center;
+  }
+  .warning{
+font-size: 30px;
+text-align: center;
+color:red;
+  }
+  #deletebt{
+    float: right;
+    margin-bottom: 14px;
+
+  }

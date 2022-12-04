@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms" (submit)="submit()">
+            <div class="form login">
+                <span class="title">S'inscrire</span>
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" name="nom"  placeholder="Entrer votre nom" [(ngModel)]="service.newuser.Nom" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="prenom" placeholder="Entrer votre prénom" [(ngModel)]="service.newuser.Prenom" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="male" placeholder="Entrer votre mail" [(ngModel)]="service.newuser.Email" required>
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" placeholder="Entrer votre mot de passe" [(ngModel)]="service.newuser.Password" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="cpassword" placeholder="Confirmer votre mot de passe" [(ngModel)]="cpassword" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="date" name="date" placeholder="Entrer votre date de naissance" [(ngModel)]="service.newuser.Date_naissance" required>
+                        <i class="uil uil-calender"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="adress" placeholder="Entrer votre adresse" [(ngModel)]="service.newuser.Adresse" required>
+                        <i class="uil uil-home"></i>
+                    </div>
+                    <div class="input-field">
+                        <select name="select" [(ngModel)]="service.newuser.Sexe">
+                            <option *ngFor="let c of Sexe" value="{{c.name}}">{{c.name}}</option>
+                        </select>
+                        <i class="uil uil-mars"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="phone" [(ngModel)]="service.newuser.PhoneNumber" placeholder="+216" required>
+                        <i class="uil uil-phone"></i>
+                    </div>
+                    <div class="input-field button">
+                        <input type="submit" value="S'inscrire">
+                    </div>
+                </form>
+            
+                <div class="login-signup">
+                    <span class="text">Déjà inscrit ? 
+                        <a class="text signup-link" routerLink="../login">Se Connecter</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+

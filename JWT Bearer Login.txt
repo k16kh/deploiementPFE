@@ -1,0 +1,81 @@
+1 step:
+import jwt 
+
+2) add authentification: startup class :
+app.UseAuthentication();
+
+3) services configure :
+var key = Encoding.UTF8.GetBytes("SecretKey123456789");  // aana choix fel secret key
+services.AddAuthentication(options => 
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; //schémas config
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = false;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey=true,
+                    IssuerSigningKey=new SymmetricSecurityKey(key),
+                    ValidateIssuer=false,
+                    ValidateAudience=false,
+                    ClockSkew  = TimeSpan.Zero
+                };
+            });
+baad naamlou model jdid loginmodel:
+exemple:
+  public class LoginModel
+    {
+        public string Email { get; set; }   
+        public string Password { get; set; }
+    }
+
+
+ Nemchiw lel controller(usercontroller): (or create LoginController)
+exemple:
+  [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> Login(login model user) //naaytou lel login model mteena fel method hedhi
+        {
+ var key = Encoding.UTF8.GetBytes("SecretKey123456789"); //secret key li 5tarneh
+            var user= await _userManager.FindByEmailAsync(model.Email);//nlawjou aal user bel mail
+            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))  //naamlou verification mtaa mot de passe shyh wale
+            {
+                var tokenDescriptor = new SecurityTokenDescriptor //lehné bech naamlou creation mtaa description lel token mteena
+                {
+                    Subject = new ClaimsIdentity(new Claim[] //sujet mtaa token li lezem dima nhotou fyh id mtaa user
+                    {
+                        new Claim("UserID", user.Id.ToString()) //hatina id mtaa user fel subject
+                    }),
+                    Expires = DateTime.UtcNow.AddMinutes(5), //expire date mtaa token tnajem tabdelha days hours kima theb
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature) //hatina email wmdp fel token ama crypted bel Sha265 algorithm
+                };
+//generation mtaa token
+                var tokenHandler = new JwtSecurityTokenHandler(); 
+                var securityToken = tokenHandler.CreateToken(tokenDescriptor);  //hatina description fel token
+                var token = tokenHandler.WriteToken(securityToken); //writing data lel token
+                return Ok(new {  token });//c bon hedheya token
+            }
+            else
+            {
+                return BadRequest(new { Message = "Mail Or Password Invalid !" });
+            }
+
+        }
+
+
+
+
+
+
+
+RQ(to secure secret key): { //options lel security mtaa lweb app mteena
+
+      //Inject App Settings
+            services.Configure<ApplicationSettings>(Configuration.GetSection("AppSettings"));
+add model applicationsettings:
+narjou lel controller wnzidou IOptions<ApplicationSettings> appsettings fel class wel ctor wnzidouha mel fou9  private readonly ApplicationSettings _appsettings;
+ctor:_appsettings = appsettings.Value;
+}

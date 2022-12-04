@@ -1,0 +1,13 @@
+img{
+    width: 100px;
+    height: 120px;
+}
+#print{
+    border: none;
+}
+.list-unstyled{
+    font-size: 20px;
+}
+table{
+    font-size: 18px;
+}

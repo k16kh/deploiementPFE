@@ -1,0 +1,21 @@
+#cl{
+    color: #22a81f;
+}
+
+th{
+    color:#22a81f;
+    text-align: center ;
+    font-size: 19px;
+}
+td{
+    font-size: 17px;
+    align-items: center;
+    text-align: center;
+    vertical-align:middle;
+}
+.warningmsg{
+    color: red;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+}

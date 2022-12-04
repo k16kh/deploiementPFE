@@ -1,0 +1,22 @@
+h4{
+    color:#22a81f;
+}
+th{
+    color:#22a81f;
+    text-align: center;
+    font-size: 19px;
+}
+#img{
+    width: 230px;
+    height: 170px;
+    max-width: 400px;
+    max-height: 400px;
+}
+td{
+    text-align: center;
+    font-size: 18px;
+    vertical-align:middle;
+}
+#num{
+    font-weight: bold;
+}

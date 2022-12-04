@@ -1,0 +1,34 @@
+<div class="container my-5">
+    <h3 id="wel" class="mb-3">Bienvenue {{name}}</h3>
+    <a routerLink="myProducts"><button class="btn btn-success pbut">Consulter mes produits</button></a>
+    <a routerLink="avis-clients"><button class="btn btn-success pbut" >Avis Clients</button></a>
+    <button  class="btn btn-success pbut" (click)="view()">Mes Ventes</button>
+    <h4 id="cl" class="mb-3">Liste des fournisseurs:</h4>
+    <table class="table  table-bordered">
+    <thead>
+    <tr>
+    <th>N°</th>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Tel</th>
+    <th>Email</th>
+    <th>Adresse</th>
+    <th>Détails</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let fr of Fournisseurs;let i=index">
+       <ng-container >
+        <td>{{i}}</td>
+        <td>{{fr.nom}}</td>
+        <td>{{fr.prenom}}</td>
+        <td>{{fr.phoneNumber}}</td>
+        <td>{{fr.email}}</td>
+        <td>{{fr.adresse}}</td>
+        <td><a [routerLink]="['/pharmacien','productsfr',fr.id]">Consulter</a></td>
+    </ng-container>
+     </tr>
+    </tbody>
+    </table>
+    </div>
+    

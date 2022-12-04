@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <label for="nom" class="form-label">Id Produit</label>
+                    <input type="text" class="form-control" id="id" name="id" value="{{id}}" readonly>
+              </div>
+             <div class="mb-3">
+                    <label for="nom" class="form-label">Nom Produit</label>
+                    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="productservice.Product.nom">
+              </div>
+              <div class="mb-3">
+                <label for="nom" class="form-label">Description</label>
+                <input type="text" class="form-control" id="description" name="description" [(ngModel)]="productservice.Product.description">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Prix En DT</label>
+                <input type="text" class="form-control" id="prix" name="prix" [(ngModel)]="productservice.Product.prix">
+            </div>
+            <div class="mb-3">
+                <label for="tva" class="form-label">Tva %</label>
+                <input type="text" class="form-control" id="tva" name="tva" [(ngModel)]="productservice.Product.tva">
+            </div>
+            <div class="mb-3">
+                <label for="tva" class="form-label">Quantité</label>
+                <input type="number" min="1" max="2000" class="form-control" id="qte" name="qte" [(ngModel)]="productservice.Product.qte">
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date de péremption</label>
+                <input type="date" class="form-control" id="date" name="date" [(ngModel)]="productservice.Product.date">
+            </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mb-3">
+                    <label for="categorie" class="form-label">Catégorie</label>
+                    <input type="text" class="form-control" id="cat" name="cat" [(ngModel)]="productservice.Product.categorie">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="customFileLang">Sélectionner une image </label><div></div>
+                    <input type="file" class="form-control" id="image" name="image" (change)="loadimage($event)">
+           
+                    <div class="mb-3"><img  class="img-fluid" name="img" [src]="imgurl" alt=""></div>
+                    <div class="mb-3">
+                        <button  id="mettre"class="btn btn-success" (click)="update()">Mettre à jour</button>
+                        <button id="supp"class="btn btn-danger"  (click)="delete()">Supprimer</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>

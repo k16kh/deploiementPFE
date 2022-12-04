@@ -1,0 +1,38 @@
+<div class="container my-5">
+    <h4 id="cl" class="mb-3">Liste des Utilisateurs</h4>
+   <input id="add" type="button" class="btn btn-success" value="Ajouter un utilisateur" routerLink="AddUser">
+<input type="button" class="btn" value="Consulter les messages" routerLink="messages">
+    <table class="table  table-bordered">
+    <thead>
+    <tr>
+    <th>N°</th>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Date_naissance</th>
+    <th>Tel</th>
+    <th>Email</th>
+    <th>Sexe</th>
+    <th>Adresse</th>
+    <th>Role</th>
+    <th>Détails</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of users;let i=index">
+       <ng-container>
+        <td>{{i}}</td>
+        <td>{{item.nom}}</td>
+        <td>{{item.prenom}}</td>
+        <td>{{item.date_naissance}}</td>
+        <td>{{item.phoneNumber}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.sexe}}</td>
+        <td>{{item.adresse}}</td>
+        <td>{{item.role}}</td>
+        <td><a [routerLink]="['/admin','EditUser',item.id]">Consulter</a></td>
+    </ng-container>
+     </tr>
+    </tbody>
+    </table>
+    </div>
+    

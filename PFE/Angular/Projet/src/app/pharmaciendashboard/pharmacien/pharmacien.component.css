@@ -1,0 +1,28 @@
+#cl{
+    color: #22a81f;
+}
+#wel{
+    color:#22a81f;
+    font-weight: bold;
+}
+th{
+    color:#22a81f;
+    text-align: center ;
+    font-size: 19px;
+}
+td{
+    font-size: 17px;
+    align-items: center;
+    text-align: center;
+    vertical-align:middle;
+}
+.pbut{
+    background-color: #22a81f;
+    color:white;
+   float: right;
+   margin: 4px;
+   
+}
+.pbut:hover{
+    background-color: #075405;
+}

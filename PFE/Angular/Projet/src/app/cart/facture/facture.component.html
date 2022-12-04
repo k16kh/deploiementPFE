@@ -1,0 +1,75 @@
+<div class="card" id="content" #content>
+    <div class="card-body">
+      <div class="container mb-5 mt-3">
+        <div class="row d-flex align-items-baseline">
+          <div class="col-xl-9">
+            <p style="color: #7e8d9f;font-size: 23px;">Reçu</p>
+          </div>
+          <div class="col-xl-3 float-end" id="hide0">
+            <a class="btn btn-light text-capitalize border-0" data-mdb-ripple-color="dark" ><i
+                class="fas fa-print text-primary"></i><button id="print" printSectionId="content" [useExistingCss]="true"  ngxPrint>Imprimer</button> </a>
+            <a class="btn btn-light text-capitalize" data-mdb-ripple-color="dark" (click)="PDF()"><i
+                class="far fa-file-pdf text-danger"></i> Exporter</a>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="col-md-12">
+            <div class="text-center">
+           <img src="../../../assets/images/logo.png" alt="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xl-8">
+              <ul class="list-unstyled">
+                <li class="text-muted ">Client: <span style="color:#5d9fc5 ;">{{client.nom}} {{client.prenom}}</span></li>
+                <li class="text-muted"><i class="fas fa-phone"></i> {{client.tel}}</li>
+              </ul>
+            </div>
+            <div class="col-xl-4">
+              <p class="text-muted">Commande</p>
+              <ul class="list-unstyled">
+                <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
+                    class="fw-bold">Date de création: </span>{{today}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row my-2 mx-1 justify-content-center">
+            <table class="table table-striped table-borderless">
+              <thead style="background-color:#84B0CA ;" class="text-white">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Qte</th>
+                  <th scope="col">Prix unité (Dt)</th>
+                  <th scope="col">Total (Dt)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let product of Products;let i=index">
+                  <th scope="row">{{i}}</th>
+                  <td>{{product.nom}}</td>
+                  <td>{{product.qte}}</td>
+                  <td>{{product.prix}}</td>
+                  <td>{{calcultotaleachproduct(product.prix,product.qte)}}</td>
+                </tr>
+              </tbody>
+  
+            </table>
+          </div>
+          <div class="row">
+            <div class="col-xl-3">
+              <p class="text-black float-start"><span class="text-black me-3" style="font-size: 24px;color:#22a81f"> Total TTC</span><span
+                  style="font-size: 22px;">{{calcultotal()}} Dt</span></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xl-10">
+              <p>Merci pour votre achat</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+#title{
+    color:rgba(0, 4, 255, 0.911);
+}
+table{
+    width: 100%;
+}
+label{
+    color: rgba(0, 4, 255, 0.911);
+    font-weight: bold;
+}
+button{
+    margin: 10px;
+}
+#datefin{
+    display: none;
+}

@@ -1,0 +1,50 @@
+<div class="container my-5 w-50">
+    <h1 class="mb-3">Ajouter un nouveau utilisateur</h1>
+    <form (submit)="register()">
+    <div class="mb-3">
+    <label for="nom" class="form-label">Nom</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="service.newuseradmin.Nom">
+    </div>
+    <div class="mb-3">
+        <label for="nom" class="form-label">Prenom</label>
+        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="service.newuseradmin.Prenom">
+        </div>
+        <div class="mb-3">
+            <label for="nom" class="form-label">Mail</label>
+            <input type="text" class="form-control" id="mail"  name="mail" [(ngModel)]="service.newuseradmin.Email">
+            </div>
+            <div class="mb-3">
+                <label for="nom" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="service.newuseradmin.Password">
+                </div>
+        <div class="mb-3">
+            <label for="nom" class="form-label">Date de naissance</label>
+            <input type="date" class="form-control" id="date" name="date" [(ngModel)]="service.newuseradmin.Date_naissance">
+            </div>
+            <div class="mb-3">
+                <label for="nom" class="form-label">Sexe</label>
+            <select class="form-control" name="sexe" id="sexe" name="sexe" [(ngModel)]="service.newuseradmin.Sexe">
+                <option *ngFor="let s of Sexe" value="{{s.name}}">{{ s.name }}</option>
+            </select>
+                </div>
+                <div class="mb-3">
+                    <label for="nom" class="form-label">Tel</label>
+                    <input type="text" class="form-control" id="tel" name="adresse" [(ngModel)]="service.newuseradmin.PhoneNumber">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Adresse</label >
+                        <input type="text" class="form-control" id="adresse" name="adresse" [(ngModel)]="service.newuseradmin.Adresse">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nom" class="form-label">Role</label>
+                            <select class="form-control" name="role" id="role" [(ngModel)]="service.newuseradmin.Role" (change)="changerole()">
+                                <option *ngFor="let r of Role" value="{{r.type}}">{{ r.type }}</option>
+                            </select>
+                            </div>
+                            <div class="mb-3" id="datefin">
+                                <label for="date" class="form-label">Date Fin: </label>
+                                <input type="date"  name="datefin" class="form-control" value="2030-01-18"  max="2100-01-01" [(ngModel)]="service.newuseradmin.DateFin">
+                             </div>
+    <button type="submit" id="submit" class="btn">Ajouter</button>
+    </form>
+    </div>

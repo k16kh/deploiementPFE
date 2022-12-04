@@ -1,0 +1,79 @@
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+       
+      <div class="carousel-item carousel-item-next carousel-item-start">
+        
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+       
+        <div class="overlay-image" style="background-image:url('../../assets/images/portail-emploi-beauteemploi-conseiller-conseillere-parapharmacie.jpg')"> <!-- changer image 1-->
+        </div>
+        <div class="container">
+          <div class="carousel-caption text-start">
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <div class="overlay-image" style="background-image:url('../../assets/images/portail-emploi-beauterecrutement-preparateur-preparatrice-pharmacie.jpg');"> <!-- changer image 2-->
+        </div>
+        <div class="container">
+          <div class="carousel-caption">
+            
+            <p><a class="btn btn-lg" routerLink="/products">Voir les produits</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active carousel-item-start">
+        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+        <div class="overlay-image" style="background-image:url('../../assets/images/produits-medicamenteux-.jpg');"> <!-- changer image 3-->
+        <div class="container">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<div class="container-fluid">
+  <section class="section-products">
+		<div class="row">
+				<div class="row justify-content-center text-center">
+						<div class="col-md-8 col-lg-6">
+								<div class="header">
+									<!-- <h2>NOS NOUVEAUTÉS</h2> -->	
+								</div>
+						</div>
+				</div>
+				<div class="row">
+						<div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let product of Products.slice(0,4)">
+							
+								<div id="product-1" class="single-product">
+								
+										<div class="part-1">
+											<img id="img" class="img-thumbnail"  src="{{product.imageString}}" alt="" [routerLink]="['/products','product',product.id]">
+												<ul>
+														<li><a [routerLink]="['/products','product',product.id]"><i class="fas fa-shopping-cart"></i></a></li>
+												</ul>
+										</div>
+										<div class="part-2">
+											<h3 class="product-title">{{product.nom}}</h3>
+											<h4 class="product-price">{{product.prix}} Dt</h4>
+									</div>
+								</div>
+						</div>
+					
+				</div>
+		</div>
+</section>
+</div>
